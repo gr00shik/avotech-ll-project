@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: new-microservices
+  profiles:
+    include:
+      - core
+      - actuator
+      - springdoc
+      - logging
+      - app
+      - db
+      - cache
+      - flyway
+      - kafka
+      - envers
+      - security
+    group:
+      dev:
+        - db-dev
+

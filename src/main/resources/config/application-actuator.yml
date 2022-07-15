@@ -1,0 +1,24 @@
+spring:
+  config:
+    activate:
+      on-profile: actuator
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - configprops
+          - env
+          - info
+          - logfile
+          - loggers
+          - metrics
+          - caches
+          - flyway
+          - liquibase
+          - jolokia

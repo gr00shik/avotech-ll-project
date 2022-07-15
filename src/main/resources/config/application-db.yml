@@ -1,0 +1,49 @@
+spring:
+  config:
+    activate:
+      on-profile: db
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: deferred
+  datasource:
+    hikari:
+      auto-commit: false
+    url: jdbc:postgresql://localhost:5432/database
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    open-in-view: false
+    properties:
+      hibernate:
+        connection:
+          provider_disables_autocommit: true
+        generate_statistics: false
+        id:
+          new_generator_mappings: true
+          optimizer:
+            pooled:
+              preferred: pooled-lo
+        jdbc:
+          batch_size: 25
+          lob:
+            non_contextual_creation: true
+          time_zone: Asia/Tashkent
+        order_inserts: true
+        order_updates: true
+        query:
+          fail_on_pagination_over_collection_fetch: true
+          in_clause_parameter_padding: true
+        temp:
+          use_jdbc_metadata_defaults: false
+        use-new-id-generator-mappings: false
+    show-sql: false
+

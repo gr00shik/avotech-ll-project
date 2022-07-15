@@ -1,0 +1,10 @@
+spring:
+  config:
+    activate:
+      on-profile: app
+
+
+app:
+  botChatId: SET_GROUP_ID
+  botToken: SET_ID:SET_TOKEN
+  notification: false

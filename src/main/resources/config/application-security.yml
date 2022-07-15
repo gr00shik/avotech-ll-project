@@ -1,0 +1,16 @@
+app:
+  jwt:
+    secret: _M2L8re)116#aRVU}h%W.75zD~D9z%4S9*edVpk((r?*,w=S7jxO4%)7(c<zYYOgI7*iKo10sj,A+?)P=;8R#G92_MI|dAFc{e4X.v5<5Hv;C4oEZ4N3-bvsT6I?t
+
+spring:
+  config:
+    activate:
+      on-profile: security
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+      - org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration
+
+security:
+  basic:
+    enabled: true

@@ -1,0 +1,14 @@
+spring:
+  config:
+    activate:
+      on-profile: springdoc
+
+
+springdoc:
+  show-actuator: true
+  swagger-ui:
+    groups-order: DESC
+    operationsSorter: alpha
+    path: /swagger-ui.html
+    supportedSubmitMethods: '"get", "put", "post", "delete", "options", "head","patch", "trace"'
+    tagsSorter: alpha

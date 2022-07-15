@@ -1,0 +1,20 @@
+spring:
+  config:
+    activate:
+      on-profile: logging
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:8081/log
+#        username: admin
+#        password: admin
+#        instance:
+#          metadata:
+#            user:
+#              name: ${spring.security.user.name}
+#              password: ${spring.security.user.password}
+
+logging:
+  level:
+    ROOT: info
+    uz.avotech: debug

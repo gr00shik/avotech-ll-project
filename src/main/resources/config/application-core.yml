@@ -1,0 +1,31 @@
+spring:
+  config:
+    activate:
+      on-profile: core
+  jackson:
+    serialization:
+      indent-output: true
+  jmx:
+    enabled: false
+  main:
+    allow-bean-definition-overriding: true
+  messages:
+    basename: i18n/messages
+  mvc:
+    static-path-pattern: /docs/**
+    throw-exception-if-no-handler-found: true
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 128MB
+      max-request-size: 256MB
+  web:
+    resources:
+      add-mappings: true
+      static-locations: classpath:/resources/static/docs/,classpath:/static/docs/,classpath:/resources/static/,classpath:/static/
+
+server:
+  servlet:
+    encoding:
+      force: true

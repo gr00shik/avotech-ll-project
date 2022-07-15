@@ -1,0 +1,10 @@
+spring:
+  config:
+    activate:
+      on-profile: envers
+  jpa:
+    properties:
+      org.hibernate.envers.audit_table_suffix: _HISTORY
+      org.hibernate.envers.revision_field_name: REVISION_ID
+      org.hibernate.envers.revision_type_field_name: REVISION_TYPE
+      org.hibernate.envers.store_data_at_delete: true

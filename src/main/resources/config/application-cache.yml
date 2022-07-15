@@ -1,0 +1,14 @@
+app:
+  redis:
+    url: redis://localhost:6379
+
+spring:
+  config:
+    activate:
+      on-profile: cache
+  jpa:
+    properties:
+      hibernate:
+        cache:
+          use_query_cache: false
+          use_second_level_cache: true

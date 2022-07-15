@@ -1,0 +1,12 @@
+pluginManagement {
+    plugins {
+        id 'org.springframework.boot' version "${spring_boot_version}"
+        id 'io.spring.dependency-management' version "${spring_dependency_management_version}"
+    }
+}
+
+rootProject.name = 'avotech-ll-project'
+// be sure about naming avotech-layer-projectName
+// avotech - for all projects
+// layer:  bl - for business, il - integration
+// projectName: name of project in the singular (banner, not banners)
