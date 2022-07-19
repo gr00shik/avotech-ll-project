@@ -23,18 +23,21 @@ dependencies {
 // ------------------------ spring ------------------------------
 // ----- dev -------
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    implementation "de.codecentric:spring-boot-admin-starter-server:${spring_boot_version}"
-
-// ----- core -----
+//    implementation 'de.codecentric:spring-boot-admin-starter-client:2.4.1'
+// ----- core ------
     implementation 'org.springframework.boot:spring-boot-starter-aop'
-// ---- web -------
+// ---- web --------
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation "org.springdoc:springdoc-openapi-ui:${springfox_vesion}"
 // ---- security ---
     implementation 'org.springframework.boot:spring-boot-starter-security'
+// ----token -----
+    implementation "io.jsonwebtoken:jjwt-api:${jwt_version}"
+    implementation "io.jsonwebtoken:jjwt-impl:${jwt_version}"
+    implementation "io.jsonwebtoken:jjwt-jackson:${jwt_version}"
 
-    implementation group: 'io.netty', name: 'netty-resolver-dns-native-macos', version: '4.1.79.Final', classifier: 'osx-aarch_64'
+//    implementation group: 'io.netty', name: 'netty-resolver-dns-native-macos', version: '4.1.79.Final', classifier: 'osx-aarch_64'
     implementation group: 'org.jolokia', name: 'jolokia-core', version: '1.7.1'
 
 

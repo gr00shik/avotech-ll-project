@@ -1,15 +1,12 @@
 package uz.avotech.layer.project.security.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
-import java.util.List;
+import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
 @Configuration
 public class SecurityConfig {
@@ -20,16 +17,21 @@ public class SecurityConfig {
 			"/log"
 	};
 
+	public static final String[] PUBLIC_API = {
+			"api/v1/**"
+	};
+
 	@Bean
 	SecurityFilterChain actuatorSecurityFilterChain(HttpSecurity http) throws Exception {
 		http.
+				sessionManagement().sessionCreationPolicy(STATELESS).
+				and().
 				cors().disable().
-				authorizeHttpRequests(
-						auth -> auth.
-								antMatchers(ACTUATOR).permitAll()
-//								.antMatchers().hasAnyRole()
-//								.antMatchers().hasAnyAuthority()
-    			).httpBasic(Customizer.withDefaults());
+				csrf().disable().
+				authorizeHttpRequests(auth ->
+						auth.antMatchers(ACTUATOR).permitAll().
+						antMatchers(PUBLIC_API).permitAll()
+				).httpBasic(Customizer.withDefaults());
     			return http.build();
     		}
 }
